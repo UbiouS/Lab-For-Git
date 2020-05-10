@@ -1,4 +1,5 @@
 package Pac;
+
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.Scanner;
@@ -7,9 +8,9 @@ public class Dialogues {
     static class Start {
         Scanner in;
 
-        public void Greetings(){
+        public void Greetings() throws IOException, URISyntaxException {
             System.out.println("Hello! How can I help you");
-            Listen();
+            Reply(Listen());
         }
 
         public String Listen(){
@@ -24,6 +25,10 @@ public class Dialogues {
                 case "surprise":
                     System.out.println("Pic-a-boo!");
                     Listen();
+                    break;
+
+                case "plus":
+                    Math.plus();
                     break;
 
                 case "internet":
@@ -71,24 +76,16 @@ public class Dialogues {
         public boolean Greetings() {
             System.out.println("Want some memes?");
             answer = Listen();
-            if (answer = true)
-                return true;
-            else
-                return false;
+            return answer = true;
         }
 
         public boolean Listen(){
             in = new Scanner(System.in);
-            boolean repl = Reply(in.nextLine());
-            return repl;
+            return Reply(in.nextLine());
         }
 
         public boolean Reply(String reply){
-            if (reply == "y"){
-                return true;
-            }
-            else
-                return false;
+            return reply.equals("y");
         }
     }
 }
