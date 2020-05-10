@@ -1,17 +1,13 @@
 package Pac;
-import java.net.MalformedURLException;
-import java.net.URL;
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 
 public class ToBrowse {
-    static class OpenPage {
-        void ToWeb(String webUrl) throws MalformedURLException {
-            URL url = new URL(webUrl);
-        }
-
+    void ToWeb(String webUrl) throws IOException, URISyntaxException {
+        Desktop.getDesktop().browse(new URI(webUrl));
     }
-
-
-
 }
 
 

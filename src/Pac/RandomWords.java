@@ -2,8 +2,6 @@ package Pac;
 
 public class RandomWords {
     static boolean promotions = false;
-    static class Cracking{
-
         public void Getter(){
 
             Dialogues.Asking question = new Dialogues.Asking();
@@ -28,5 +26,5 @@ public class RandomWords {
             insert.Listen();
         }
 
-    }
+
 }
