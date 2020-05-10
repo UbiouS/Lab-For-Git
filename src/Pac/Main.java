@@ -6,6 +6,6 @@ public class Main {
     public static void main(String[ ] args) throws IOException, URISyntaxException {
         System.out.println("This is the beginning");
         Dialogues.Start insert = new Dialogues.Start();
-        insert.Execute();
+        insert.Greetings();
     }
 }

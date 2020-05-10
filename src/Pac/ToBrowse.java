@@ -5,7 +5,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class ToBrowse {
-    void ToWeb(String webUrl) throws IOException, URISyntaxException {
+    static void ToWeb(String webUrl) throws IOException, URISyntaxException {
         Desktop.getDesktop().browse(new URI(webUrl));
     }
 }
