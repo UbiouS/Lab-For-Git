@@ -42,6 +42,14 @@ public class Dialogues {
                     meme.Bam();
                     break;
 
+                case "meme":
+                    URLs.Meme();
+                    break;
+
+                case "timmy":
+                    URLs.Timmy();
+                    break;
+
                 case "memes":
                     meme.Getter();
                     break;
@@ -54,12 +62,6 @@ public class Dialogues {
 
         public void Goobye(){
             System.out.println("Goodbye");
-        }
-
-        public void Execute (){
-
-            Greetings();
-
         }
     }
 
