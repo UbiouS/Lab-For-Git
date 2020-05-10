@@ -1,9 +1,10 @@
 package Pac;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class Dialogues {
-    static class Start implements BasicTalk{
+    static class Start {
         Scanner in;
 
         public void Greetings(){
@@ -11,28 +12,42 @@ public class Dialogues {
             Listen();
         }
 
-        public void Listen(){
+        public String Listen(){
             in = new Scanner(System.in);
-            Reply(in.nextLine());
+            return in.nextLine();
         }
 
-        public void Reply(String reply){
-            RandomWords.Cracking meme = new  RandomWords.Cracking();
+        public void Reply(String reply) throws IOException, URISyntaxException {
+            RandomWords meme = new  RandomWords();
+            URLs starter = new URLs();
             switch (reply){
                 case "surprise":
                     System.out.println("Pic-a-boo!");
                     Listen();
                     break;
+
+                case "internet":
+                    starter.open(Listen());
+                    break;
+
                 case "exit":
                     Goobye();
                     break;
+
+                case "rick":
+                    starter.Rick();
+                    break;
+
                 case "bam":
                     meme.Bam();
-                default:
-                    System.out.println("Sorry, I don't understand");
                     break;
+
                 case "memes":
                     meme.Getter();
+                    break;
+
+                default:
+                    System.out.println("Sorry, I don't understand");
                     break;
             }
         }
